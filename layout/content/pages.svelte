@@ -1,13 +1,10 @@
 <script>
   export let title, description, content;
   import Uses from "../components/source.svelte";
-  import { onMount } from "svelte";
   import { slide } from "svelte/transition";
-
-  onMount(async () => {
-  });
 </script>
 
+{#key content}  
 <div in:slide={{ delay: 300 }} out:slide={{ delay: 300}}>
 <h1>{title}</h1>
 
@@ -22,3 +19,4 @@
 <p><a href="/">Back home</a></p>
 
 </div>
+{/key}
