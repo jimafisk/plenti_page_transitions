@@ -1,9 +1,9 @@
 {
-	"title": "this is the second slide",
+	"title": "Pagination",
 	"description": [
-		"Plenti is a minimalist JAMstack framework that's flexible and easy to use.",
-		"We've cut out as many dependencies as possible so you can focus on being productive instead of wrestling with tools.",
-		"The Svelte frontend gives users get a snappy experience, and the Go backend builds fast so you can get more done."
+		"At some point you'll probably want to display all content of a certain type in a list.",
+		"If you have a lot of content it's nice to have the ability to break that list into several pages.",
+		"This will save your users from becoming overwhelmed and allow your webpages to load faster."
 	],
     "order": "2"
 }

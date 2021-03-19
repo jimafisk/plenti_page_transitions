@@ -3,28 +3,34 @@
   import { scale } from "svelte/transition";
   import { count } from '../scripts/stores.svelte';
   function setCount(n) {
-    //count.update(n => newNum);
     count.set(n);
   }
 </script>
 
-<a on:click={() => setCount(parseFloat(order)-1)} class="controls prev" href="/slides/{parseFloat(order)-1}">Previous</a>
+<a on:click={() => setCount(Number(order)-1)} class="controls prev" href="/slides/{Number(order)-1}">Previous</a>
 
 {#key content}  
 <div id="slides" in:scale={{ delay: 300 }} out:scale>
-    <h1>{title}</h1>
-    <div>
-    {#each description as paragraph}
-        <p>{@html paragraph}</p>
-    {/each}
+    <div id="slide-wrapper">
+        <h1>{order}: {title}</h1>
+        <div>
+        {#each description as paragraph}
+            <p>{@html paragraph}</p>
+        {/each}
+        </div>
     </div>
     <a class="exit" href="/">Exit Slides</a>
 </div>
 {/key}
 
-<a on:click={() => setCount(parseFloat(order)+1)} class="controls next" href="/slides/{parseFloat(order)+1}">Next</a>
+<a on:click={() => setCount(Number(order)+1)} class="controls next" href="/slides/{Number(order)+1}">Next</a>
 
 <style>
+    #slide-wrapper {
+        background-color: var(--base-dark);
+        color: var(--base);
+        padding: 20px 20px 40px;
+    }
     #slides {
         display: flex;
         flex-direction: column;
