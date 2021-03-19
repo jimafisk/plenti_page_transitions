@@ -1,6 +1,7 @@
 {
 	"types": {
 		"pages": "/:filename",
+		"slides": "/slides/:field(order)",
 		"index": "/:paginate(totalPages)"
 	},
 	"build": "public",

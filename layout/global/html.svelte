@@ -10,7 +10,7 @@
 <html lang="en">
 <Head title={makeTitle(content.filename)} />
 <body>
-  {#if content.type != "pages"}
+  {#if content.type != "slides"}
   <Nav />
   {/if}
   <main>
@@ -19,7 +19,7 @@
       <br />
     </div>
   </main>
-  {#if content.type != "pages"}
+  {#if content.type != "slides"}
   <Footer {allContent} />
   {/if}
 </body>

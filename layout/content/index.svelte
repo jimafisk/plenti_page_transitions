@@ -3,7 +3,6 @@
 	import Grid from '../components/grid.svelte';
 	import Uses from "../components/source.svelte";
 	import Pager from "../components/pager.svelte";
-  import { slide } from "svelte/transition";
 
 	$: currentPage = content.pager;
 	let postsPerPage = 3;
@@ -14,7 +13,6 @@
 	$: postRangeLow = postRangeHigh - postsPerPage;
 </script>
 
-<div in:slide={{ delay: 300 }} out:slide={{ delay: 300}}>
 <h1>{title}</h1>
 
 <section id="intro">
@@ -31,4 +29,3 @@
 <Pager {currentPage} {totalPages} />
 
 <Uses {content} />
-</div>
