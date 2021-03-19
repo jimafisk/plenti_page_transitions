@@ -1,9 +1,14 @@
+<script>
+  import { count } from '../scripts/stores.svelte';
+  let slide = 1;
+  count.subscribe(n => slide = n);
+</script>
 <nav>
   <div class="container">
     <span id="brand"><a href="/"><img alt="planarian" src="/assets/logo.svg" />Home</a></span>
     <a href="/about">About</a>&nbsp;
     <a href="/contact">Contact</a>&nbsp;
-    <a href="/slides/1">Slides</a>
+    <a href="/slides/{slide}">Slides</a>
   </div>
 </nav>
 

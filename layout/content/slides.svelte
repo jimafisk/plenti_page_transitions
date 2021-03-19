@@ -1,9 +1,14 @@
 <script>
   export let title, description, order, content;
   import { scale } from "svelte/transition";
+  import { count } from '../scripts/stores.svelte';
+  function setCount(n) {
+    //count.update(n => newNum);
+    count.set(n);
+  }
 </script>
 
-<a class="controls prev" href="/slides/{parseFloat(order)-1}">Previous</a>
+<a on:click={() => setCount(parseFloat(order)-1)} class="controls prev" href="/slides/{parseFloat(order)-1}">Previous</a>
 
 {#key content}  
 <div id="slides" in:scale={{ delay: 300 }} out:scale>
@@ -17,7 +22,7 @@
 </div>
 {/key}
 
-<a class="controls next" href="/slides/{parseFloat(order)+1}">Next</a>
+<a on:click={() => setCount(parseFloat(order)+1)} class="controls next" href="/slides/{parseFloat(order)+1}">Next</a>
 
 <style>
     #slides {
