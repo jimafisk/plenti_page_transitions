@@ -1,11 +1,11 @@
 <script>
   export let title, description, content;
   import Uses from "../components/source.svelte";
-  import { slide } from "svelte/transition";
+  import { scale } from "svelte/transition";
 </script>
 
 {#key content}  
-<div in:slide={{ delay: 300 }} out:slide={{ delay: 300}}>
+<div in:scale={{ delay: 300 }} out:scale>
 <h1>{title}</h1>
 
 <div>

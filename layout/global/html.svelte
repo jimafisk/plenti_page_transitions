@@ -10,14 +10,18 @@
 <html lang="en">
 <Head title={makeTitle(content.filename)} />
 <body>
+  {#if content.type != "pages"}
   <Nav />
+  {/if}
   <main>
     <div class="container">
       <svelte:component this={route} {...content.fields} {content} {allContent} {allComponents} />
       <br />
     </div>
   </main>
+  {#if content.type != "pages"}
   <Footer {allContent} />
+  {/if}
 </body>
 </html>
 
