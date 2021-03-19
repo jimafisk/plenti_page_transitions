@@ -3,24 +3,21 @@
   import { scale } from "svelte/transition";
 </script>
 
-{#key content}  
-<div id="slides" in:scale={{ delay: 300 }} out:scale>
-<h1>{title}</h1>
-
 <a class="controls prev" href="/slides/{parseFloat(order)-1}">Previous</a>
 
-<div>
-  {#each description as paragraph}
-    <p>{@html paragraph}</p>
-  {/each}
-</div>
-
-<a class="controls next" href="/slides/{parseFloat(order)+1}">Next</a>
-
-<a class="exit" href="/">Exit Slides</a>
-
+{#key content}  
+<div id="slides" in:scale={{ delay: 300 }} out:scale>
+    <h1>{title}</h1>
+    <div>
+    {#each description as paragraph}
+        <p>{@html paragraph}</p>
+    {/each}
+    </div>
+    <a class="exit" href="/">Exit Slides</a>
 </div>
 {/key}
+
+<a class="controls next" href="/slides/{parseFloat(order)+1}">Next</a>
 
 <style>
     #slides {
@@ -31,6 +28,7 @@
     }
     .controls {
         position: absolute;
+        margin: 20px;
         top: 50%;
     }
     .controls.prev {
