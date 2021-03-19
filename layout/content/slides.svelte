@@ -32,11 +32,6 @@
     .controls {
         position: absolute;
         top: 50%;
-        border: 2px solid var(--primary-dark);
-        padding: 10px;
-    }
-    .controls:before, .exit:before {
-        display: none;
     }
     .controls.prev {
         left: 0;
@@ -45,8 +40,6 @@
         right: 0;
     }
     .exit {
-        border: 2px solid var(--primary-dark);
-        padding: 10px;
         display: inline-block;
         margin: 40px auto 0;
     }
