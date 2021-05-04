@@ -1,7 +1,7 @@
 {
-	"types": {
+	"routes": {
 		"pages": "/:filename",
-		"slides": "/slides/:field(order)",
+		"slides": "/slides/:fields(order)",
 		"index": "/:paginate(totalPages)"
 	},
 	"build": "public",

@@ -4,7 +4,7 @@
   import Footer from './footer.svelte';
   import { makeTitle } from '../scripts/make_title.svelte';
 
-  export let route, content, allContent, allComponents;
+  export let layout, content, allContent, allLayouts;
 </script>
 
 <html lang="en">
@@ -15,7 +15,7 @@
   {/if}
   <main>
     <div class="container">
-      <svelte:component this={route} {...content.fields} {content} {allContent} {allComponents} />
+      <svelte:component this={layout} {...content.fields} {content} {allContent} {allLayouts} />
       <br />
     </div>
   </main>
