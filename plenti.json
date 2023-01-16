@@ -2,7 +2,7 @@
 	"routes": {
 		"pages": "/:filename",
 		"slides": "/slides/:fields(order)",
-		"index": "/:paginate(totalPages)"
+		"_index": "/:paginate(totalPages)"
 	},
 	"build": "public",
 	"local": {
